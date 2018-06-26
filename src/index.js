@@ -2,17 +2,24 @@ import Vertex from './vertex.js'
 
 class Vertices {
   constructor (length = 0) {
-    this.realloc(length)
+    this.length = 0
+    this.set(new ArrayBuffer(length * this.BYTES_PER_ELEMENT))
   }
 
   set (buffer) {
-    var length = buffer / this.BYTES_PER_ELEMENT
-    for (var i = this.length; i < this.length; i++) {
-      this[i] = new Vertex(this, this.BYTE_PER_ELEMENT * i)
-    }
-    this.length = length
+    var size = this.BYTES_PER_ELEMENT
+    var length = buffer.length / size
+
+    this.buffer = buffer
     this.uint8 = new Uint8Array(buffer)
+    this.uint16 = new Uint16Array(buffer)
     this.int16 = new Int16Array(buffer)
+
+    for (var i = this.length; i < length; i++) {
+      this[i] = new Vertex(this, size * i)
+    }
+
+    this.length = length
   }
 
   realloc (length) {
