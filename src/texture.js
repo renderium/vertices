@@ -6,19 +6,19 @@ class Texture {
   }
 
   get s () {
-    return this.memory.uint16[ this.offset ]
+    return this.memory.uint16[this.offset]
   }
 
   set s (s) {
-    this.memory.uint16[ this.offset ] = s
+    this.memory.uint16[this.offset] = s
   }
 
   get t () {
-    return this.memory.uint16[ this.offset + 1 ]
+    return this.memory.uint16[this.offset + 1]
   }
 
   set t (t) {
-    this.memory.uint16[ this.offset + 1 ] = t
+    this.memory.uint16[this.offset + 1] = t
   }
 }
 

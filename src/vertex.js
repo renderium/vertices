@@ -6,6 +6,7 @@ class Vertex {
   constructor (memory, byteOffset) {
     this.memory = memory
     this.byteOffset = byteOffset
+    this.offset = byteOffset / 2
     this.position = new Position(memory, byteOffset)
     this.center = new Position(memory, this.position.byteOffset + this.position.SIZE)
     this.texture = new Texture(memory, this.center.byteOffset + this.center.SIZE)
@@ -13,19 +14,19 @@ class Vertex {
   }
 
   get theta () {
-    return this.memory.int16[this.byteOffset / 2 + 8]
+    return this.memory.int16[this.offset + 8]
   }
 
   set theta (theta) {
-    this.memory.int16[this.byteOffset / 2 + 8] = theta
+    this.memory.int16[this.offset + 8] = theta
   }
 
   get gradientId () {
-    return this.memory.uint16[ this.byteOffset / 2 + 9 ]
+    return this.memory.uint16[ this.offset + 9 ]
   }
 
   set gradientId (gradientId) {
-    this.memory.int16[this.byteOffset / 2 + 9] = gradientId
+    this.memory.int16[this.offset + 9] = gradientId
   }
 }
 
