@@ -25,6 +25,19 @@ or download [dev](https://unpkg.com/renderium/vertices/dist/templates.umd.js) or
 
 ## Usage
 
+```js
+// create vertices
+var vertices = new Vertices(0xff)
+
+// write data
+var vertex = vertices[128]
+vertex.position.x = 10
+vertex.color.a = 255
+
+// push buffer to webgl
+gl.bufferSubData(gl.ARRAY_BUFFER, 0, vertices.buffer)
+```
+
 ## Development
 
 Command | Description
