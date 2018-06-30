@@ -26,7 +26,7 @@ class Vertex {
   }
 
   set gradientId (gradientId) {
-    this.memory.int16[this.offset + 9] = gradientId
+    this.memory.uint16[this.offset + 9] = gradientId
   }
 }
 

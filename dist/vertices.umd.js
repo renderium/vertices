@@ -122,21 +122,21 @@
     }
 
     set gradientId (gradientId) {
-      this.memory.int16[this.offset + 9] = gradientId;
+      this.memory.uint16[this.offset + 9] = gradientId;
     }
   }
 
   Vertex.prototype.SIZE = Vertex.SIZE = 20;
 
   class Vertices {
-    constructor (length = 0) {
+    constructor (length) {
       this.length = 0;
       this.set(new ArrayBuffer(length * this.BYTES_PER_ELEMENT));
     }
 
     set (buffer) {
       var size = this.BYTES_PER_ELEMENT;
-      var length = buffer.length / size;
+      var length = buffer.byteLength / size;
 
       this.buffer = buffer;
       this.uint8 = new Uint8Array(buffer);
