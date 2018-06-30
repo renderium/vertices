@@ -1,7 +1,7 @@
 <h1 align="center">Vertices</h1>
 <h4 align="center">Vertices for renderium</h4>
 <p align="center">
-  <a href="https://www.npmjs.com/package/renderium/vertices" target="_blank">
+  <a href="https://www.npmjs.com/package/@renderium/vertices" target="_blank">
     <img src="https://img.shields.io/npm/v/renderium/vertices.svg" alt="NPM version" target="_blank"></img>
   </a>
   <a href="https://travis-ci.org/renderium/vertices" target="_blank">
@@ -21,7 +21,7 @@
 npm install --save @renderium/vertices
 ```
 
-or download [dev](https://unpkg.com/renderium/vertices/dist/templates.umd.js) or [prod](https://unpkg.com/renderium/vertices/dist/templates.min.js) version
+or download [dev](https://unpkg.com/@renderium/vertices/dist/vertices.umd.js) or [prod](https://unpkg.com/@renderium/vertices/dist/vertices.min.js) version
 
 ## Usage
 
