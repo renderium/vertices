@@ -117,12 +117,20 @@
       this.memory.int16[this.offset + 8] = theta;
     }
 
-    get gradientId () {
-      return this.memory.uint16[ this.offset + 9 ]
+    get linearGradient () {
+      return this.memory.uint8[this.byteOffset + 18]
     }
 
-    set gradientId (gradientId) {
-      this.memory.uint16[this.offset + 9] = gradientId;
+    set linearGradient (linearGradient) {
+      this.memory.uint8[this.byteOffset + 18] = linearGradient;
+    }
+
+    get radialGradient () {
+      return this.memory.uint8[this.byteOffset + 19]
+    }
+
+    set radialGradient (radialGradient) {
+      this.memory.uint8[this.byteOffset + 19] = radialGradient;
     }
   }
 

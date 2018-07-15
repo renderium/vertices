@@ -107,14 +107,25 @@ test('[index].theta', t => {
   t.end()
 })
 
-test('[index].gradientId', t => {
+test('[index].linearGradient', t => {
   var vertices = new Vertices(3)
   var vertex = vertices[1]
-  var uint16 = new Uint16Array(vertices.buffer)
-  uint16[19] = 1
-  t.equal(vertex.gradientId, 1, 'should read from memory')
-  vertex.gradientId = 2
-  t.equal(uint16[19], 2, 'should write to memory')
+  var uint8 = new Uint8Array(vertices.buffer)
+  uint8[38] = 1
+  t.equal(vertex.linearGradient, 1, 'should read from memory')
+  vertex.linearGradient = 2
+  t.equal(uint8[38], 2, 'should write to memory')
+  t.end()
+})
+
+test('[index].radialGradient', t => {
+  var vertices = new Vertices(3)
+  var vertex = vertices[1]
+  var uint8 = new Uint8Array(vertices.buffer)
+  uint8[39] = 1
+  t.equal(vertex.radialGradient, 1, 'should read from memory')
+  vertex.radialGradient = 2
+  t.equal(uint8[39], 2, 'should write to memory')
   t.end()
 })
 
