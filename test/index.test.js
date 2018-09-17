@@ -100,10 +100,10 @@ test('[index].theta', t => {
   var vertices = new Vertices(3)
   var vertex = vertices[1]
   var int16 = new Int16Array(vertices.buffer)
-  int16[18] = 0xffff / 2 | 0
-  t.equal(vertex.theta, 32767, 'should read from memory')
-  vertex.theta = 0
-  t.equal(int16[18], 0, 'should write to memory')
+  int16[18] = 0x7fff
+  t.equal(vertex.theta, 2 * Math.PI, 'should read from memory')
+  vertex.theta = 3 * Math.PI
+  t.equal(int16[18], 0x3fff, 'should write to memory')
   t.end()
 })
 

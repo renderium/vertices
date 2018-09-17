@@ -92,6 +92,11 @@ class Color {
 
 Color.prototype.SIZE = Color.SIZE = 4;
 
+const TWO_PI = 2 * Math.PI;
+
+// 0x7fff largest number that could be written to Int16Array
+// represent 2Pi in binary data
+
 class Vertex {
   constructor (memory, byteOffset) {
     this.memory = memory;
@@ -104,11 +109,11 @@ class Vertex {
   }
 
   get theta () {
-    return this.memory.int16[this.offset + 8]
+    return this.memory.int16[this.offset + 8] / 0x7fff * TWO_PI
   }
 
   set theta (theta) {
-    this.memory.int16[this.offset + 8] = theta;
+    this.memory.int16[this.offset + 8] = (theta % TWO_PI) / TWO_PI * 0x7fff;
   }
 
   get linearGradient () {
