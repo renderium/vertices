@@ -80,19 +80,19 @@ test('[index].color', t => {
   uint8[32] = 10
   uint8[33] = 20
   uint8[34] = 30
-  uint8[35] = 40
+  uint8[35] = 255
   t.equal(vertex.color.r, 10, '.r should read from memory')
   t.equal(vertex.color.g, 20, '.g should read from memory')
   t.equal(vertex.color.b, 30, '.b should read from memory')
-  t.equal(vertex.color.a, 40, '.a should read from memory')
+  t.equal(vertex.color.a, 1, '.a should read from memory')
   vertex.color.r = 40
   vertex.color.g = 30
   vertex.color.b = 20
-  vertex.color.a = 10
+  vertex.color.a = 0.5
   t.equal(uint8[32], 40, '.r should write to memory')
   t.equal(uint8[33], 30, '.g should write to memory')
   t.equal(uint8[34], 20, '.b should write to memory')
-  t.equal(uint8[35], 10, '.a should write to memory')
+  t.equal(uint8[35], 127, '.a should write to memory')
   t.end()
 })
 

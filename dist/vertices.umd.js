@@ -88,11 +88,11 @@
     }
 
     get a () {
-      return this.memory.uint8[this.offset + 3]
+      return this.memory.uint8[this.offset + 3] / 0xff
     }
 
     set a (a) {
-      this.memory.uint8[this.offset + 3] = a;
+      this.memory.uint8[this.offset + 3] = a * 0xff;
     }
   }
 
