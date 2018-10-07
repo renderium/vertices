@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct {
   short x;
